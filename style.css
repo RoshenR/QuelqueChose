@@ -1,0 +1,113 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+
+header{
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+#logo-borderlands{
+    width: 50%;
+    height: 100%;
+}
+
+#logo-borderlands img{
+    padding-left: 50px;
+    width: 20%;
+    height: 100%;
+    image-resolution: normal;
+}
+
+#officiel{
+    width: 30%;
+    align-self: center;
+    justify-self: center;
+}
+
+#officiel h2{
+    color: #ffcc00;
+    padding-left: 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: "Bell MT";
+    letter-spacing: 0.2px;
+    font-weight:900;
+}
+
+
+#officiel h2 a {
+    text-decoration: none;
+    color: #ffcc00;
+    transition: color 0.3s ease-in-out;
+}
+
+#officiel h2 a:hover{
+    color: white;
+}
+
+
+
+#first-section {
+    height: 100vh;
+    background: url("img/Borderlands-full.avif");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+
+#quelquechose {
+    height: 87%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.lilith-pic {
+    justify-self: center;
+    align-self: center;
+    width: 90%;
+    height: 90%;
+    clip-path: circle(26.3% at 48% 41%);
+    grid-column: 2/4;
+    grid-row: 2;
+    z-index: 3;
+}
+
+.beaujack-pic {
+    justify-self: center;
+    align-self: center;
+    width: 150%;
+    height: 90%;
+    clip-path: circle(35.3% at 48% 41%);
+    grid-column: 2;
+    grid-row: 1/3;
+    z-index: 2;
+}
+
+.zero-pic {
+    justify-self: center;
+    width: 95%;
+    height: 50%;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    grid-column: 2/4;
+    grid-row: 1/3;
+    z-index: 1;
+}
+
+
+#band {
+    height: 3%;
+}
