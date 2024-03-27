@@ -1,35 +1,30 @@
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    const scrollThreshold = 300; // Le nombre de pixels de défilement avant de masquer le header
+let lastScrollTop = 0; // Stocke la position précédente du défilement
 
-    if (window.scrollY > scrollThreshold) {
-        header.classList.add('hidden');
-    } else {
-        header.classList.remove('hidden');
-    }
-});
-
-
-
-let lastScrollTop = 0;
-let scrollUpDistance = 0;
-const scrollThreshold = 300; // Modifiez ce seuil si nécessaire
-
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    let currentScroll = window.scrollY || document.documentElement.scrollTop;
+window.addEventListener("scroll", function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
     if (currentScroll > lastScrollTop) {
         // Défilement vers le bas
-        header.classList.add('hidden');
-        scrollUpDistance = 0;
+        document.querySelector("header").style.top = "-100px"; // Modifiez cette valeur en fonction de la hauteur de votre en-tête
     } else {
         // Défilement vers le haut
-        scrollUpDistance += (lastScrollTop - currentScroll);
-
-        if (scrollUpDistance >= scrollThreshold && header.classList.contains('hidden')) {
-            header.classList.remove('hidden');
-        }
+        document.querySelector("header").style.top = "0";
     }
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Pour les navigateurs mobiles qui permettent de dépasser le scroll
 }, false);
+
+/* pour le bouton remonter */
+
+document.addEventListener("DOMContentLoaded", function() {
+    var btn = document.getElementById("gotoTopBtn");
+    var section = document.getElementById("first-section");
+
+    if (btn && section) {
+        btn.addEventListener("click", function() {
+            section.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+});
+/* Fin bouton remonter*/
+

@@ -6,20 +6,32 @@
     box-sizing: border-box;
 }
 
+html,
 body{
     padding: 0;
     margin: 0;
     background-color: black;
     height: 100%;
     width: 100%;
-}
-
-html {
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+section {
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+section nav {
+    position: fixed;
+    top: 0;
+    right: 0;
 }
 
 .hidden {
@@ -29,14 +41,144 @@ html {
 
 header{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 10vh;
-    flex-wrap: wrap;
     position: fixed;
     background-color: black;
-    justify-content: left;
     z-index: 4;
+    top: 0;
+    left: 0;
 }
+
+/* Menu burger valouz*/
+
+.burger-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    z-index: 5;
+}
+
+.burger-icon span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    transition: all 0.3s linear;
+}
+
+/* Animation des barres du burger pour indiquer l'ouverture/fermeture */
+#burger-toggle:checked + .burger-icon span:nth-of-type(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+#burger-toggle:checked + .burger-icon span:nth-of-type(2) {
+    opacity: 0;
+}
+
+#burger-toggle:checked + .burger-icon span:nth-of-type(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.burger-nav {
+    position: fixed;
+    top: 0;
+    right: -50vw;
+    width: 50vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: right 0.3s ease;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.burger-nav h2 a {
+    color: #ffcc00;
+    padding-left: 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: "Bell MT";
+    letter-spacing: 0.2px;
+    font-weight: 900;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.burger-nav h2 a:hover {
+    color: white;
+}
+
+.burger-nav ul {
+    list-style: none;
+}
+
+.burger-nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+
+/* Déplacer le menu à l'écran lorsque la case est cochée */
+#burger-toggle:checked ~ .burger-nav {
+    right: 0; /* Fait apparaître le menu */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+}
+
+@media (max-width: 768px) {
+    .burger-icon {
+        display: flex;
+    }
+}
+
+.burger-toggle {
+    position: absolute;
+    top: -9999px; /* Déplace la case à cocher hors de l'écran */
+    left: -9999px; /* Déplace la case à cocher hors de l'écran */
+}
+
+/* Fin menu burgouz */
+
+
+#gotoTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%; /* Rend le bouton rond */
+    width: 50px; /* Définit la largeur du bouton */
+    height: 50px; /* Définit la hauteur du bouton */
+    display: flex;
+    justify-content: center; /* Centre horizontalement le contenu */
+    align-items: center; /* Centre verticalement le contenu */
+    border: none; /* Supprime la bordure */
+    background: linear-gradient(to top, black, rgba(255, 204, 0, 0.75));
+    color: white; /* Couleur de la flèche/texte */
+    cursor: pointer; /* Change le curseur en main quand on survole le bouton */
+    font-size: 24px; /* Taille de la flèche/texte */
+}
+
+#gotoTopBtn:focus {
+    outline: none; /* Supprime le contour lors de la sélection du bouton */
+}
+
+#gotoTopBtn i, #gotoTopBtn span {
+    transition: transform 0.3s ease; /* Anime le transform */
+    display: inline-block; /* Nécessaire pour permettre la transformation */
+}
+
+#gotoTopBtn:hover i, #gotoTopBtn:hover span {
+    transform: translateY(-10px); /* Déplace la flèche de 5 pixels vers le haut */
+}
+
 
 img {
     height: 100%;
@@ -180,6 +322,7 @@ img {
 #band {
     flex-wrap: wrap;
     height: 3%;
+    margin-top: 4%;
 }
 
 #second-section{
@@ -287,7 +430,6 @@ img {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    object-fit:cover;
 }
 
 
