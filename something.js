@@ -21,14 +21,14 @@ window.addEventListener('scroll', () => {
 
     if (currentScroll > lastScrollTop) {
         // Défilement vers le bas
-        header.classList.add('hidden-2');
+        header.classList.add('hidden');
         scrollUpDistance = 0;
     } else {
         // Défilement vers le haut
         scrollUpDistance += (lastScrollTop - currentScroll);
 
         if (scrollUpDistance >= scrollThreshold && header.classList.contains('hidden')) {
-            header.classList.remove('hidden-2');
+            header.classList.remove('hidden');
         }
     }
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
