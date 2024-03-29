@@ -138,8 +138,8 @@ header{
 
 .burger-toggle {
     position: absolute;
-    top: -9999px; /* Déplace la case à cocher hors de l'écran */
-    left: -9999px; /* Déplace la case à cocher hors de l'écran */
+    top: -9999px;
+    left: -9999px;
 }
 
 /* Fin menu burgouz */
@@ -231,7 +231,7 @@ img {
     flex-wrap: wrap;
     height: 100vh;
     background: url("img/Borderlands-full.avif");
-    background-size: 100%;
+    background-size: 1500px;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 0;
@@ -420,37 +420,69 @@ img {
     height: 100%;
 }
 
+#games-window {
+    position: absolute;
+    bottom: -450px;
+    left: 70%;
+    transform: translateX(-50%);
+    font-family: 'Bungee', cursive;
+    width: 40%;
+    padding: 12px;
+    color: #ffcc00;
+    border: 5px solid #ffcc00;
+    text-transform: uppercase;
+    font-size: 0.5em;
+    background: linear-gradient(to right, transparent, rgba(255, 204, 0, 0.75));
+    transition: color 0.3s, border 0.3s, background 0.3s;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+    text-decoration: none;
+    text-shadow: #343131 4px 2px;
+}
+
+#games-window:hover {
+    color: white;
+    border: 5px solid white;
+    background: linear-gradient(to right, transparent, rgba(65, 64, 55, 0.77));
+    text-shadow: none;
+}
 
 #third-band {
     flex-wrap: wrap;
     height: 3%;
+    font-size: 2vb;
+
 }
 
 .text-borderlands {
     position: absolute;
-    top: 50px; /* Ajustez la position verticale comme nécessaire */
-    right: 50px; /* Ajustez la position horizontale comme nécessaire */
-    color: #ffcc00; /* La couleur du texte */
-    font-family: 'Bungee', cursive; /* La police d'affichage épaisse */
-    font-size: 2em; /* Ajustez la taille de la police comme nécessaire */
+    top: 50px;
+    right: 50px;
+    color: #ffcc00;
+    font-family: 'Bungee', cursive;
+    font-size: 2em;
     text-align: left;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre de texte pour améliorer la lisibilité */
-    max-width: 600px; /* Ajustez selon la largeur de votre texte */
-    line-height: 1.2; /* Ajustez l'espacement des lignes si nécessaire */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    line-height: 1.2;
     padding-right: 20%;
     z-index: 0;
 }
 
 .story-text {
-    color: #ffffff; /* La couleur du texte */
-    font-family: 'Bungee', cursive; /* Choisissez une police appropriée */
-    font-size: 0.5em; /* Ajustez la taille de la police comme nécessaire */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre de texte pour améliorer la lisibilité */
-    margin: 20px auto; /* Centrer le texte horizontalement et ajouter un peu d'espace en haut et en bas */
-    line-height: 1.4; /* Ajustez l'espacement des lignes si nécessaire */
+    color: #ffffff;
+    font-family: 'Bungee', cursive;
+    font-size: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 20px auto; /
+    line-height: 1.4;
     position: absolute;
-    right: 50px; /* Position à partir du côté droit de la section */
+    right: 50px;
     z-index: 10;
     font-family: 'Bungee', cursive;
     font-weight: 100;
+    max-font-size: 0.5em;
+    min-font-size: 0.5em;
 }
