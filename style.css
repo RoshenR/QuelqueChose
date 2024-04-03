@@ -446,7 +446,7 @@ img {
 
 #games-window {
     position: relative;
-    bottom: -400px;
+    top: 400px;
     left: 80%;
     transform: translateX(-50%);
     font-family: 'Bungee', cursive;
