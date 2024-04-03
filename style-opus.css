@@ -282,3 +282,17 @@ header {
     image-resolution: normal;
     object-fit: contain;
 }
+
+.new-image {
+    width: 100%; /* ou la taille que vous désirez */
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    bottom: 30%; /* Ajustez en fonction de la taille de l'image */
+    z-index: -2;
+}
+
+.card:hover .new-image {
+    opacity: 1;
+    bottom: -35%; /* Ajustez pour obtenir l'effet désiré */
+}

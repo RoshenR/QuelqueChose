@@ -269,7 +269,7 @@ img {
     z-index: 1;
 }
 
-@media screen and (width < 1000px) {
+@media screen and (width <= 1000px) {
 
     .zero-pic{
         display: none;
@@ -294,19 +294,22 @@ img {
         object-fit: contain;
     }
 
-    (width < 500px) {
-    .pres-text{
-        font-size: 3em;
+    #games-window {
+        top: 550px;
     }
+
+    .text-borderlands{
+        right:0;
+        left: 20%;
+        height: 80%;
+    }
+
 }
-}
 
-
-@media screen and (width < 500px) {
-   .pres-text{
-       font-size: 3em;
-   }
-
+@media (max-width: 1500px) {
+    #games-window {
+        top: 550px;
+    }
 }
 
 
@@ -323,7 +326,7 @@ img {
     letter-spacing: 0.2px;
     font-weight:900;
     text-transform: uppercase;
-    font-size: 1em;
+    font-size: 2.3vmin;
 }
 
 
@@ -367,7 +370,7 @@ img {
     letter-spacing: 0.2px;
     font-weight:900;
     text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 3vmin;
     min-font-size: 1.5em;
 }
 
@@ -442,9 +445,9 @@ img {
 }
 
 #games-window {
-    position: absolute;
-    bottom: -450px;
-    left: 70%;
+    position: relative;
+    bottom: -400px;
+    left: 80%;
     transform: translateX(-50%);
     font-family: 'Bungee', cursive;
     width: 40%;
@@ -483,7 +486,7 @@ img {
     right: 50px;
     color: #ffcc00;
     font-family: 'Bungee', cursive;
-    font-size: 2em;
+    font-size: 4vmin;
     text-align: left;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     max-width: 600px;
@@ -495,7 +498,7 @@ img {
 .story-text {
     color: #ffffff;
     font-family: 'Bungee', cursive;
-    font-size: 0.5em;
+    font-size: 2vmin;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin: 20px auto; /
     line-height: 1.4;
