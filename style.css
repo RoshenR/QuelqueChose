@@ -92,9 +92,10 @@ header{
     right: -50vw;
     width: 50vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
+    background: linear-gradient(to left,black, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), #ffcc00);
     transition: right 0.3s ease;
-    clip-path: polygon(49% 0, 100% 0%, 100% 100%, 67% 100%, 24% 51%);    display: flex;
+    clip-path: polygon(49% 0, 100% 0%, 100% 100%, 67% 100%, 24% 51%);
+    display: flex;
     justify-content: center;
     align-items: center;
 
@@ -106,14 +107,12 @@ header{
 
 .burger-nav ul li a {
     color: #ffcc00;
-    padding-left: 20px;
     text-transform: uppercase;
-    font-family: "Bell MT";
+    font-family: "Bell MT", serif;
     letter-spacing: 0.2px;
     font-weight: 900;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
-    padding: 15px;
     padding-left: 200px;
     display: block;
     text-align: center;
@@ -182,16 +181,17 @@ img {
 }
 
 #logo-borderlands{
-    width: 50vw;
+    width: 40%;
     height: 10vh;
 }
 
 #logo-borderlands img{
     flex-wrap: wrap;
     padding-left: 50px;
-    width: 20%;
+    width: 40%;
     height: 100%;
     image-resolution: normal;
+    object-fit: contain;
 }
 
 #officiel{
@@ -206,7 +206,7 @@ img {
     padding-left: 20px;
     display: inline-block;
     text-transform: uppercase;
-    font-family: "Bell MT";
+    font-family: "Bell MT", serif;
     letter-spacing: 0.2px;
     font-weight:900;
     justify-self: right;
@@ -280,12 +280,33 @@ img {
     .lilith-pic{
         display: none;
     }
+    #logo-borderlands{
+        width: 60%;
+        height: 10vh;
+    }
+
+    #logo-borderlands img{
+        flex-wrap: wrap;
+        padding-left: 50px;
+        width: 60%;
+        height: 100%;
+        image-resolution: normal;
+        object-fit: contain;
+    }
+
+    (width < 500px) {
+    .pres-text{
+        font-size: 3em;
+    }
 }
+}
+
 
 @media screen and (width < 500px) {
    .pres-text{
        font-size: 3em;
    }
+
 }
 
 
@@ -298,7 +319,7 @@ img {
     grid-column: 4/6;
     grid-row: 6;
     padding-top: 50%;
-    font-family: "Bell MT";
+    font-family: "Bell MT", serif;
     letter-spacing: 0.2px;
     font-weight:900;
     text-transform: uppercase;
@@ -342,7 +363,7 @@ img {
     padding-top: 1%;
     text-align: center;
     color: #d1ba27;
-    font-family: "Bell MT";
+    font-family: "Bell MT", serif;
     letter-spacing: 0.2px;
     font-weight:900;
     text-transform: uppercase;
@@ -357,7 +378,7 @@ img {
     padding-left: 20px;
     display: inline-block;
     text-transform: uppercase;
-    font-family: "Bell MT";
+    font-family: "Bell MT", serif;
     letter-spacing: 0.2px;
     font-weight:900;
 }
@@ -383,7 +404,7 @@ img {
     padding-left: 20px;
     display: inline-block;
     text-transform: uppercase;
-    font-family: "Bell MT";
+    font-family: "Bell MT", serif;
     letter-spacing: 0.2px;
     font-weight:900;
 }
@@ -481,7 +502,6 @@ img {
     position: absolute;
     right: 50px;
     z-index: 10;
-    font-family: 'Bungee', cursive;
     font-weight: 100;
     max-font-size: 0.5em;
     min-font-size: 0.5em;
