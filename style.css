@@ -486,3 +486,32 @@ img {
     max-font-size: 0.5em;
     min-font-size: 0.5em;
 }
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffcc00;
+    font-family: 'Bungee', cursive;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-social-media a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.footer-social-media a:hover {
+    color: #ffcc00;
+}
+
+.footer-contact-info p {
+    margin: 5px 0;
+}

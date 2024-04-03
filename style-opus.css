@@ -1,58 +1,157 @@
+
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
-
 body {
-    background: #000;
-    color: #fff;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #191c29;
 }
 
 #band-first {
-    height:3vh;
+    position: fixed;
+    top: 0;
+    height: 3vh;
     width: 100%;
-    flex-wrap: wrap;
+}
+section {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+}
+.card {
+    width: 225px;
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    perspective: 2500px;
+    margin: 0 20px;
 }
 
-img {
+.cover-image {
+    width: 100%;
     height: 100%;
-    width: 100%;
-}
-
-.BL--tiny img {
     object-fit: cover;
 }
 
-section#opus {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Crée 3 colonnes */
-    grid-template-rows: auto auto; /* Crée 2 lignes */
-    gap: 50px; /* Espacement entre les boîtes */
-    padding: 10px;
-    place-items: center; /* Centre les éléments horizontalement et verticalement */
+.wrapper {
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    z-index: -1;
 }
 
-.BL-item {
-    height: 350px;
-    width: 300px;
-    background: #333;
-    border: 1px solid #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card:hover .wrapper {
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
 }
 
-/* Style pour la première rangée de boîtes, elles s'alignent automatiquement */
-.BL--1 { }
-.BL--2 { }
-.BL--pre { }
+.wrapper::before,
+.wrapper::after {
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+}
+.wrapper::before {
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(
+            to top,
+            transparent 46%,
+            rgba(12, 13, 19, 0.5) 68%,
+            rgba(12, 13, 19) 97%
+    );
+}
+.wrapper::after {
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(
+            to bottom,
+            transparent 46%,
+            rgba(12, 13, 19, 0.5) 68%,
+            rgba(12, 13, 19) 97%
+    );
+}
 
-/* Style pour la seconde rangée de boîtes */
-.BL--3 { grid-column: 1 / 3; }
-.BL--3 { grid-row: 2; }
-.BL--tiny { grid-column: 2 / 4; }
-.BL--tiny { grid-row: 2; }
+.card:hover .wrapper::before,
+.wrapper::after {
+    opacity: 1;
+}
+
+.card:hover .wrapper::after {
+    height: 120px;
+}
+.title {
+    width: 100%;
+    transition: transform 0.5s;
+}
+.card:hover .title {
+    transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+}
+
+.character_tina {
+    width: 60%;
+    height: 80%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+}
+
+.character_zero {
+    width: 80%;
+    height: 90%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+}
+.character_lilith {
+    width: 150%;
+    height: 90%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+}
+
+.card:hover .character {
+    opacity: 1;
+    transform: translate3d(0%, -30%, 100px);
+}
+
+.card:hover .character_tina {
+    transform: translate3d(0%, -30%, 100px);
+    opacity: 1;
+}
+
+.card:hover .character_zero {
+    transform: translate3d(0%, -30%, 100px);
+    opacity: 1;
+}
+.card:hover .character_lilith {
+    transform: translate3d(0%, -30%, 100px);
+    opacity: 1;
+}
+
