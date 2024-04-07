@@ -269,49 +269,6 @@ img {
     z-index: 1;
 }
 
-@media screen and (width <= 1000px) {
-
-    .zero-pic{
-        display: none;
-    }
-    .beaujack-pic{
-        display: none;
-    }
-    .lilith-pic{
-        display: none;
-    }
-    #logo-borderlands{
-        width: 60%;
-        height: 10vh;
-    }
-
-    #logo-borderlands img{
-        flex-wrap: wrap;
-        padding-left: 50px;
-        width: 60%;
-        height: 100%;
-        image-resolution: normal;
-        object-fit: contain;
-    }
-
-    #games-window {
-        top: 550px;
-    }
-
-    .text-borderlands{
-        right:0;
-        left: 20%;
-        height: 80%;
-    }
-
-}
-
-@media (max-width: 1500px) {
-    #games-window {
-        top: 550px;
-    }
-}
-
 
 
 .pres-text {
@@ -538,3 +495,45 @@ footer {
 .footer-contact-info p {
     margin: 5px 0;
 }
+
+@media screen and ( width <= 1500) {
+    #games-window {
+        top: 550px;
+    }
+}
+
+@media screen and (width <= 1000px) {
+
+    .zero-pic{
+        display: none;
+    }
+    .beaujack-pic{
+        display: none;
+    }
+    .lilith-pic{
+        display: none;
+    }
+    #logo-borderlands{
+        width: 60%;
+        height: 10vh;
+    }
+    #logo-borderlands img{
+        flex-wrap: wrap;
+        padding-left: 50px;
+        width: 60%;
+        height: 100%;
+        image-resolution: normal;
+        object-fit: contain;
+    }
+    #games-window   {
+        top: 550px;
+    }
+    .text-borderlands{
+        right:0;
+        left: 20%;
+        height: 80%;
+    }
+}
+
+
+
